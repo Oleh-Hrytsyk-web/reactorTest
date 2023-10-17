@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+
+@layer base {
+    html {
+        font-family: Manrope;
+    }
+
+}
+
+@tailwind components;
+
+@layer components {
+    .btn {
+        @apply py-2 px-5 text-primary leading-[1.4] relative min-h-[48px] font-bold border-2 border-b-[6px] rounded-[0.625rem] before:absolute before:top-0 before:bottom-0 before:left-[-0.125rem] before:right-[-0.125rem] before:z-[-10] before:rounded-[0.625rem] before:content-['']
+    }
+
+    .btn:hover {
+        @apply translate-y-[-2px]
+    }
+
+    .btn:active {
+        @apply min-h-[45px] sm:min-h-[50px] border-b-[2px] mb-[4px] sm:mb-[4px] shadow-none translate-y-[3px]
+    }
+
+    .btn-primary:active {
+        @apply mb-[3px] sm:mb-[4px]
+    }
+
+    .btn-primary:hover:before {
+        @apply shadow-[0_8px_0__#FC0]
+    }
+
+    .btn-secondary:hover:before {
+        @apply shadow-[0_8px_0__#00acff]
+    }
+
+    .btn-primary:active:before,
+    .btn-secondary:active:before {
+        @apply shadow-none
+    }
+
+    .form input:focus~label,
+    .form input:not(:placeholder-shown)~label {
+        @apply transform -translate-y-[10px] translate-x-[0px] text-base sm:text-base leading-[1.375]
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+        @apply outline-2 outline-offset-[4px] outline-cyan-500
+    }
+}
+
+
+@tailwind utilities;
